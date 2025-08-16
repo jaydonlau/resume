@@ -1,0 +1,137 @@
+% !TEX TS-program = XeLaTeX
+\documentclass[a4paper,11pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage{fontspec}
+\usepackage{fontawesome}
+\usepackage{enumitem}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{2pt}{2pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-----------Additional Margin ------------------
+\addtolength{\oddsidemargin}{-.6in}
+\addtolength{\evensidemargin}{-.6in}
+\addtolength{\textwidth}{1.2in}
+
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textheight}{.8in}
+
+\geometry{top=0.6in, left=0.5in, right=0.5in, bottom=0.6in}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Jaydon Lau
+	}\\ \vspace{1.4mm} 
+	\faEnvelopeO \hspace{0.4mm} \href{mailto:lau.jaydon@gmail.com}{lau.jaydon@gmail.com} \hspace{0.4mm} | \hspace{0.4mm} \faGithub \hspace{0.4mm} \href{https://github.com/jaydonlau}{github.com/jaydonlau}  \hspace{0.4mm} | \hspace{0.4mm} \faPhone \hspace{0.4mm} (437)-580-4482
+	\par}
+
+%--------------------SECTIONS-----------------------------------
+
+%Section: Technical Skills
+\section{Technical Skills}
+\vspace{5pt}
+\begin{tabular}{@{}ll}
+\textsc{Languages:} & Java, Python, JavaScript, HTML, CSS, SQL \\
+\textsc{Technologies: } & React, React Native, Spring, GraphQL, Hibernate, Android, Kubernetes, Docker, Django \\
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\vspace{5pt}
+\textbf{Redfin} \hspace*{\fill}\emph{Seattle, WA / Remote} \\
+\emph{Senior Software Developer} \hspace*{\fill} \emph{Feb 2021 - Present}
+	\begin{itemize}[noitemsep, topsep=-1ex]
+	\item TODO
+	\end{itemize}
+
+\textbf{Top Hat} \hspace*{\fill} \emph{Toronto, ON} \\
+\emph{Senior Software Developer} \hspace*{\fill} \emph{Jun 2019 - Feb 2021}
+\begin{itemize}[noitemsep, topsep=-1ex]
+\item Led the development of manually graded questions with inline comments and PDF preview, resulting in over 200,000 inline comments being created
+\item Developed other classroom assessment features for the Top Hat web app in React, Redux and Django
+\item Performed the role of pod lead for the Questions team, overseeing planning sessions and retrospectives
+\item Proposed and implemented changes to the team's QA review process, which were adopted by several other teams after publishing an internal blog post
+\end{itemize}
+
+ \textbf{Redfin Corp.} \hspace*{\fill}  \emph{Seattle, WA}  \\
+\emph{Software Developer Intern} \hspace*{\fill}  \emph{Jan - Dec 2018}
+ 	\begin{itemize}[noitemsep, topsep=-1ex]
+	
+	\item Full stack feature work on both the web and mobile Agent Tools platform App
+	\item Improved the team's code review request workflow by utilizing Botkit and Slack APIs
+	\item Rewrote Java endpoints for performance improvements, going from roughly 800ms to 450ms
+	\item Joined the Security Working Group as a cross-team effort to improve engineering security
+	\end{itemize}
+\textbf{Investment Technology Group} \hspace*{\fill} \emph{Toronto, ON} \\
+ \emph{Algorithmic Trading Developer Intern}  \hspace*{\fill} \emph{Jan - May 2017} 
+ 	\begin{itemize}[noitemsep, topsep=-1ex]
+	\item Implemented new behaviours for varying risk tolerance on different trading strategies in C++ and C\#, including hedging, opportunistic, VWAP and volume participation algorithms
+    \item Optimized a deploy tool written in C\# by using multi-threading and data compression, reducing \\ the running time by up to 50\%, saving over 250 hours annually
+	%\item Debugged issues with algo strategies using a real-time testing environment and wrote Lua scripts \\ for simulated testing in order to ensure the algo was behaving as expected
+	\end{itemize}
+  
+%  Section: Relevant Projects
+\section{Projects}
+\vspace{5pt}
+\href{https://github.com/jaydonlau/Chess-Clock}{Chess Clock Time Control} - \emph {Android App} 
+	\begin{itemize}[noitemsep, topsep=-1ex]
+	\item Chess clock timer that implements different types of delay increments (Fischer, Bronstein)
+	\end{itemize}
+
+% Section: Education
+\section{Education}
+\vspace{5pt}
+ \textbf{University of Waterloo},  \emph{Bachelor of Computer Science} \hfill \textsc{April} 2019
+ \begin{itemize}[noitemsep, topsep=-1ex]
+ \item Minor in Combinatorics \& Optimization 
+ \end{itemize} 
+  \textbf{Wilfrid Laurier University}, \emph{Bachelor of Business Administration} \hfill \textsc{April} 2019
+ \begin{itemize}[noitemsep, topsep=-1ex]
+  \item Specialization in Finance
+  \end{itemize} 
+
+
+
+
+\end{document}
